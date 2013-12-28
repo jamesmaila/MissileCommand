@@ -728,35 +728,35 @@ finish_status:                           #
     leave                                #
     ret                                  #
 #-------------------------------------------------------------------------------
-mp1_ioctl_endgame:                         #
-    pushl     %ebp                         #
-    movl      %esp,%ebp                     #
-    pushl     %ebx                         #
-    pushl     %esi                         #
-    pushl     %edi                         #
-                                        #
-free_mp1_missiles:                         #
-    movl      mp1_missile_list,%ebx         #
-    cmpl      $0,%ebx                     #
-    je        free_delete_list             #
-    pushl     %ebx                         #
-    call      mp1_free                     # 
-    popl      %ebx                         #
-    movl      NEXT(%ebx),%ebx             #
-                                        #
-free_delete_list:                         #
-    movl      delete_list,%ebx             #
-    cmpl      $0,%ebx                     #
-    je        finish_game                 #
-    pushl     %ebx                         #
-    call      mp1_free                     #    
-    popl      %ebx                         #
-    movl      NEXT(%ebx),%ebx             #
-                                        #
+mp1_ioctl_endgame:                       #
+    pushl     %ebp                       #
+    movl      %esp,%ebp                  #
+    pushl     %ebx                       #
+    pushl     %esi                       #
+    pushl     %edi                       #
+                                         #
+free_mp1_missiles:                       #
+    movl      mp1_missile_list,%ebx      #
+    cmpl      $0,%ebx                    #
+    je        free_delete_list           #
+    pushl     %ebx                       #
+    call      mp1_free                   # 
+    popl      %ebx                       #
+    movl      NEXT(%ebx),%ebx            #
+                                         #
+free_delete_list:                        #
+    movl      delete_list,%ebx           #
+    cmpl      $0,%ebx                    #
+    je        finish_game                #
+    pushl     %ebx                       #
+    call      mp1_free                   #    
+    popl      %ebx                       #
+    movl      NEXT(%ebx),%ebx            #
+                                         #
 finish_game:                             #
-    popl      %ebx                         #
-    popl      %esi                         #
-    popl      %edi                         #
-    leave                                 #
-    ret                                 #
+    popl      %ebx                       #
+    popl      %esi                       #
+    popl      %edi                       #
+    leave                                #
+    ret                                  #
 #-------------------------------------------------------------------------------

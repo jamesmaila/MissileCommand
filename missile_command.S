@@ -18,8 +18,6 @@
     EXPLOSION = 64
 
 
-# Data shared between this file and rtc.c helper functions
-
 # This '.globl' directive makes these symbols visible externally
 .globl mp1_missile_list, base_alive, mp1_score
 
